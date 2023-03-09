@@ -1,0 +1,11 @@
+.btn-count {
+    margin-top: 20px;
+    margin-left: 25px;
+    background-color: #ccc;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 100rem;
+}
+.btn-count:active {
+    background-color: #ffe3e3;
+}
