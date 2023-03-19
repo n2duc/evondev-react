@@ -9,7 +9,6 @@ const HackerNews = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [url, setUrl] = useState(`http://hn.algolia.com/api/v1/search?query=${query}`)
 
-
     const handleFetchData = useRef({});
     handleFetchData.current = async () => {
         setLoading(true);

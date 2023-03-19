@@ -1,5 +1,6 @@
 import "./App.scss";
-import HackerNews from "./components/news/HackerNews";
+// import HackerNews from "./components/news/HackerNews";
+import HackerNewsReducer from "./components/news/HackerNewsReducer";
 // import Header from "./components/Header";
 // import Photos from "./components/photo/Photos";
 // import Card from "./components/card/Card";
@@ -20,7 +21,8 @@ import HackerNews from "./components/news/HackerNews";
 function App() {
     return (
         <div>
-            <HackerNews />
+            {/* <HackerNews /> */}
+            <HackerNewsReducer />
         </div>
     );
 }
