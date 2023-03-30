@@ -1,6 +1,7 @@
 import "./App.scss";
+import RefCount from "./components/counter/RefCount";
 // import HackerNews from "./components/news/HackerNews";
-import HackerNewsReducer from "./components/news/HackerNewsReducer";
+// import HackerNewsReducer from "./components/news/HackerNewsReducer";
 // import Header from "./components/Header";
 // import Photos from "./components/photo/Photos";
 // import Card from "./components/card/Card";
@@ -22,7 +23,8 @@ function App() {
     return (
         <div>
             {/* <HackerNews /> */}
-            <HackerNewsReducer />
+            {/* <HackerNewsReducer /> */}
+            <RefCount />
         </div>
     );
 }

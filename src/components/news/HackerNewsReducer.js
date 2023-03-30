@@ -56,7 +56,7 @@ const HackerNewsReducer = () => {
             })
             dispatch({
                 type: 'SET_ERROR',
-                payload: `The error happend ${err}`
+                payload: `The error happened ${err}`
             })
         }
     };
