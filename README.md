@@ -1,6 +1,6 @@
 # Getting Started Learning ReactJS with [Evondev](https://evon.dev/)
 
-Course [ReactJS Evondev](https://ktclick.com/invite/333702752127).
+Course [ReactJS Evondev](https://ktclick.com/invite/333702752127).\
 Course [HTML CSS Master Evondev](https://ktclick.com/invite/391900256373).
 
 ## Available Scripts
