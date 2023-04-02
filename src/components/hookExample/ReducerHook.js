@@ -52,7 +52,7 @@ const userReducer = (state, action) => {
     }
 }
 
-const Reducer = () => {
+const ReducerHook = () => {
     const [count, dispatch] = useReducer(reducer, 0);
     const [count2, dispatch2] = useReducer(reducer2, 0);
     const [user, userDispatch] = useReducer(userReducer, initState)
@@ -114,7 +114,7 @@ const Reducer = () => {
     );
 };
 
-export default Reducer;
+export default ReducerHook;
 
 /*
     ACTION: 'ADD_NEW_ITEM'

@@ -8,25 +8,21 @@ const initState = {
     errorMessage: "",
     url: `http://hn.algolia.com/api/v1/search?query=''`,
 };
+
 const hackerNewsReducer = (state, action) => {
     switch (action.type) {
-        case 'SET_DATA': {
-            return { ...state, hits: action.payload }
-        }
-        case 'SET_LOADING': {
-            return { ...state, loading: action.payload }
-        }
-        case 'SET_ERROR': {
-            return { ...state, errorMessage: action.payload }
-        }
-        case 'SET_QUERY': {
-            return { ...state, query: action.payload }
-        }
-        case 'SET_URL': {
-            return { ...state, url: action.payload }
-        }
+        case 'SET_DATA':
+            return { ...state, hits: action.payload };
+        case 'SET_LOADING':
+            return { ...state, loading: action.payload };
+        case 'SET_ERROR':
+            return { ...state, errorMessage: action.payload };
+        case 'SET_QUERY':
+            return { ...state, query: action.payload };
+        case 'SET_URL':
+            return { ...state, url: action.payload };
         default:
-            break
+            break;
     }
 };
 
@@ -43,7 +39,7 @@ const HackerNewsReducer = () => {
             const res = await axios.get(state.url);
             dispatch({
                 type: 'SET_DATA',
-                payload: res.data?.hits || []
+                payload: res.data?.hits || [],
             })
             dispatch({
                 type: 'SET_LOADING',
@@ -56,7 +52,7 @@ const HackerNewsReducer = () => {
             })
             dispatch({
                 type: 'SET_ERROR',
-                payload: `The error happened ${err}`
+                payload: `The error happened ${err}`,
             })
         }
     };
@@ -75,13 +71,13 @@ const HackerNewsReducer = () => {
                     defaultValue={state.query}
                     onChange={(e) => dispatch({
                         type: 'SET_QUERY',
-                        payload: e.target.value
+                        payload: e.target.value,
                     })}
                 />
                 <button
                     onClick={() => dispatch({
                         type: 'SET_URL',
-                        payload: `http://hn.algolia.com/api/v1/search?query=${state.query}`
+                        payload: `http://hn.algolia.com/api/v1/search?query=${state.query}`,
                     })}
                     disabled={state.loading}
                     className="bg-blue-500 text-white font-semibold p-5 rounded-md flex-shrink-0"
