@@ -1,10 +1,12 @@
 import "./App.scss";
-import RefHook from "./components/hookExample/RefHook";
+// import RefHook from "./components/hookExample/RefHook";
+import TextareaResize from "./components/hookExample/TextareaResize";
 
 function App() {
     return (
         <div>
-            <RefHook />
+            {/* <RefHook /> */}
+            <TextareaResize />
         </div>
     );
 }

@@ -8,7 +8,8 @@ const RefHook = () => {
 
     const handleClick = () => {
         setCount(count + 1);
-        console.log({ countRef });
+        countRef.current = countRef.current + 1;
+        console.log({ count, countRef });
     }
     // useEffect(() => {
     //     setInterval(() => {
@@ -26,7 +27,7 @@ const RefHook = () => {
     }, []);
     return (
         <div>
-            <input type="text" ref={inputRef} placeholder='Auto focus input'/>
+            <input type="text" ref={inputRef} placeholder='Auto focus input' className='p-3 inline-block mr-3'/>
             <button onClick={handleClick}>CLICK COUNT</button>
             <div className='input-div' ref={divRef}></div>
         </div>
