@@ -2,9 +2,10 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 
 const TextareaResize = () => {
     const [text, setText] = useState("hello");
-    const textareaRef = useRef(null); 
     const [textareaHeight, setTextareaHeight] = useState("auto");
     const [parentHeight, setParentHeight] = useState("auto");
+    
+    const textareaRef = useRef(null); 
 
     const handleChange = (e) => {
         setTextareaHeight("auto");
@@ -22,7 +23,7 @@ const TextareaResize = () => {
             minHeight: parentHeight,
         }}>
             <textarea
-                className="transition-all overflow-hidden w-full max-w-[400px] p-5 rounded-lg border border-gray-400 resize-none focus:outline-none focus:border-blue-500 leading-normal"
+                className="transition-all ease-linear overflow-hidden w-full max-w-[400px] p-5 rounded-lg border border-gray-400 resize-none focus:outline-none focus:border-blue-500 leading-normal"
                 placeholder="Enter text"
                 ref={textareaRef}
                 value={text}

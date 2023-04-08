@@ -1,14 +1,17 @@
 import "./App.scss";
-import CallbackHook from "./components/hookExample/CallbackHook";
+import Blog from "./components/customHooks/Blog";
+import Dropdown from "./components/hookExample/Dropdown";
+import TextareaResize from "./components/hookExample/TextareaResize";
+// import CallbackHook from "./components/hookExample/CallbackHook";
 // import RefHook from "./components/hookExample/RefHook";
 // import TextareaResize from "./components/hookExample/TextareaResize";
 
 function App() {
     return (
         <div>
-            {/* <RefHook /> */}
-            {/* <TextareaResize /> */}
-            <CallbackHook />
+            <TextareaResize />
+            <Dropdown />
+            <Blog />
         </div>
     );
 }
