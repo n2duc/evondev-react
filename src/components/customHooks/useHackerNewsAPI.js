@@ -1,19 +1,19 @@
 import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 
-export default function useHackerNewsAPI() {
-    const [hits, setHits] = useState([]);
-    const [query, setQuery] = useState(" ");
+export default function useHackerNewsAPI(initialUrl, initialData) {
+    const [data, setData] = useState(initialData);
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
-    const [url, setUrl] = useState(`http://hn.algolia.com/api/v1/search?query=${query}`)
+    const [url, setUrl] = useState(initialUrl);
 
     const isMounted = useRef(true);
     useEffect(() => {
+        isMounted.current = true;
         return () => {
             isMounted.current = false;
         }
-    })
+    }, []);
 
     const handleFetchData = useRef({});
     handleFetchData.current = async () => {
@@ -22,7 +22,7 @@ export default function useHackerNewsAPI() {
             const res = await axios.get(url);
             if (isMounted.current) {
                 // console.log(res);
-                setHits(res.data?.hits || []);
+                setData(res.data || []);
                 setLoading(false);
             }
         } catch (err) {
@@ -36,9 +36,7 @@ export default function useHackerNewsAPI() {
     }, [url]);
 
     return {
-        hits,
-        query,
-        setQuery,
+        data,
         setUrl,
         loading,
         errorMessage,

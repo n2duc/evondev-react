@@ -1,7 +1,7 @@
 import React from "react";
-import useLinkNewTab from "./useLinkNewTab";
-import useHover from "./useHover";
-import useFormInput from "./useFormInput";
+import useLinkNewTab from "../customHooks/useLinkNewTab";
+import useHover from "../customHooks/useHover";
+import useFormInput from "../customHooks/useFormInput";
 
 const Blog = () => {
     const { contentRef } = useLinkNewTab();

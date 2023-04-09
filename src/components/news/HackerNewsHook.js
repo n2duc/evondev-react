@@ -1,8 +1,12 @@
+import { useState } from "react";
 import useHackerNewsAPI from "../customHooks/useHackerNewsAPI";
 
 const HackerNewsHook = () => {
-    const { hits, query, setQuery, setUrl, loading, errorMessage }  = useHackerNewsAPI();
-
+    const [query, setQuery] = useState(" ");
+    const { data, setUrl, loading, errorMessage }  = useHackerNewsAPI(
+        `http://hn.algolia.com/api/v1/search?query=''`, 
+        { hits: [] }
+    );
     return (
         <div className="bg-white mx-auto mt-5 mb-5 p-5 rounded-lg shadow-md w-2/4">
             <div className="flex mb-5 gap-x-2">
@@ -25,8 +29,8 @@ const HackerNewsHook = () => {
             )}
             <div className="flex flex-wrap gap-3">
                 {!loading &&
-                    hits.length > 0 &&
-                    hits.map((item, index) => {
+                    data.hits.length > 0 &&
+                    data.hits.map((item, index) => {
                         if (!item.title || item.title.length <= 0)  return null;
                         return (
                             <h3 className="p-2 bg-gray-100 rounded-md" key={item.title}>

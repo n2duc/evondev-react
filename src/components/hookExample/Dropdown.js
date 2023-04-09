@@ -1,22 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import useClickOutSide from '../customHooks/useClickOutSide';
 
 const Dropdown = () => {
-    const [show, setShow] = useState(false);
-    const dropDownRef = useRef(null);
-    useEffect(() => {
-        function handleDropDown(e) {
-            if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
-                setShow(false);
-            }
-        }
-        document.addEventListener('click', handleDropDown);
-        
-        return () => {
-            document.removeEventListener('click', handleDropDown);
-        }
-    }, []);
+    const { show, setShow, nodeRef } = useClickOutSide();
     return (
-        <div className='relative w-full max-w-[400px] ml-5' ref={dropDownRef}>
+        <div className='relative w-full max-w-[400px] ml-5' ref={nodeRef}>
             <div 
                 className='p-4 border border-gray-400 rounded-lg w-full cursor-pointer'
                 onClick={() => setShow(!show)}
