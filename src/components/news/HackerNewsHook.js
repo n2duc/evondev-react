@@ -1,47 +1,7 @@
-import axios from "axios";
-// import lodash from "lodash";
-import React, { useEffect, useRef, useState } from "react";
+import useHackerNewsAPI from "../customHooks/useHackerNewsAPI";
 
-const HackerNews = () => {
-    const [hits, setHits] = useState([]);
-    const [query, setQuery] = useState(" ");
-    const [loading, setLoading] = useState(true);
-    const [errorMessage, setErrorMessage] = useState("");
-    const [url, setUrl] = useState(`http://hn.algolia.com/api/v1/search?query=${query}`)
-
-    const isMounted = useRef(true);
-    useEffect(() => {
-        return () => {
-            isMounted.current = false;
-        }
-    })
-
-    const handleFetchData = useRef({});
-    handleFetchData.current = async () => {
-        setLoading(true);
-        try {
-            const res = await axios.get(url);
-            setTimeout(() => {
-                if (isMounted.current) {
-                    // console.log(res);
-                    setHits(res.data?.hits || []);
-                    setLoading(false);
-                }
-            }, 3000);
-            
-        } catch (err) {
-            setLoading(false);
-            setErrorMessage(`The error: ${err}`);
-        }
-    };
-
-    // const handleUpdateQuery = lodash.debounce((e) => {
-    //     setQuery(e.target.value)
-    // }, 500)
-
-    useEffect(() => {
-        handleFetchData.current();
-    }, [url]);
+const HackerNewsHook = () => {
+    const { hits, query, setQuery, setUrl, loading, errorMessage }  = useHackerNewsAPI();
 
     return (
         <div className="bg-white mx-auto mt-5 mb-5 p-5 rounded-lg shadow-md w-2/4">
@@ -79,4 +39,4 @@ const HackerNews = () => {
     );
 };
 
-export default HackerNews;
+export default HackerNewsHook;
