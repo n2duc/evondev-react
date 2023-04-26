@@ -1,5 +1,6 @@
 import "./App.scss";
-import SignUpFinal from "./components/form/SignUpFinal";
+import SignUpFormHook from "./components/form/SignUpFormHook";
+// import SignUpFinal from "./components/form/SignUpFinal";
 // import MovieSearch from "./components/movieSearch/MovieSearch";
 // import Form from "./components/form/Form";
 // import SignUpForm from "./components/form/SignUpForm";
@@ -9,7 +10,7 @@ import SignUpFinal from "./components/form/SignUpFinal";
 function App() {
     return (
         <div>
-            <SignUpFinal />
+            <SignUpFormHook />
         </div>
     );
 }
