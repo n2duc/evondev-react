@@ -3,20 +3,32 @@
 Course [ReactJS Evondev](https://ktclick.com/invite/333702752127).\
 Course [HTML CSS Master Evondev](https://ktclick.com/invite/391900256373).
 
-## Available Scripts
-
 ## `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## CustomHook
-
-## The knowledge about React I have learned
+## ReactHook
 ### [useState](https://react.dev/reference/react/useEffect)
 ### [useReducer](https://react.dev/reference/react/useReducer)
 ### [useEffect](https://react.dev/reference/react/useState)
 ### [useRef](https://react.dev/reference/react/useRef)
 ### [useCallback](https://react.dev/reference/react/useCallback)
+### and Custom Hook
 
+## React Hook Form - Form Validation
+- [Yup](https://www.npmjs.com/package/yup).\
+- [Formik](https://formik.org/docs/overview).\
+- [react-hook-form](https://react-hook-form.com/).\
 
+## Style Sheets with React
+- [Style components](https://styled-components.com/docs/basics).\
+- [SCSS](https://sass-lang.com/).\
+- [Tailwind-CSS](https://tailwindcss.com/docs/installation).\
+
+## Project / Pet-project
+- Tic-Tac-Toe.\
+- Photo Loading.\
+- HackerNews.\
+- Movie Search.\
+- SignUpForm-[Yup, Formik].\
