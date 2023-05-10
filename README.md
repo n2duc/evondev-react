@@ -5,8 +5,10 @@ Course [HTML CSS Master Evondev](https://ktclick.com/invite/391900256373).
 
 ## `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Knowledge
+- Prop
+- Fragment
+- Portal
 
 ## ReactHook
 ### [useState](https://react.dev/reference/react/useEffect)
@@ -17,18 +19,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### and Custom Hook
 
 ## React Hook Form - Form Validation
-- [Yup](https://www.npmjs.com/package/yup).\
-- [Formik](https://formik.org/docs/overview).\
-- [react-hook-form](https://react-hook-form.com/).\
+- [Yup](https://www.npmjs.com/package/yup)
+- [Formik](https://formik.org/docs/overview)
+- [react-hook-form](https://react-hook-form.com/)
 
 ## Style Sheets with React
-- [Style components](https://styled-components.com/docs/basics).\
-- [SCSS](https://sass-lang.com/).\
-- [Tailwind-CSS](https://tailwindcss.com/docs/installation).\
+- [Style components](https://styled-components.com/docs/basics)
+- [SCSS](https://sass-lang.com/)
+- [Tailwind-CSS](https://tailwindcss.com/docs/installation)
 
 ## Project / Pet-project
-- Tic-Tac-Toe.\
-- Photo Loading.\
-- HackerNews.\
-- Movie Search.\
-- SignUpForm-[Yup, Formik].\
+- Tic-Tac-Toe
+- Photo Loading
+- HackerNews
+- Movie Search
+- SignUpForm-[Yup, Formik]

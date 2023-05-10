@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 // using react hook form
-import { useForm } from "react-hook-form";
+import { Controller, useController, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -12,6 +12,7 @@ const SignUpFormHook = () => {
             .required("Please enter your first name"),
         lastName: yup.string().required(),
         email: yup.string().email("Invalid email format").required(),
+        address: yup.string().required("Please enter your address")
     });
 
     const {
@@ -23,6 +24,7 @@ const SignUpFormHook = () => {
         resetField,
         setFocus,
         setValue,
+        control,
     } = useForm({
         resolver: yupResolver(schema),
         mode: "onChange",
@@ -52,8 +54,9 @@ const SignUpFormHook = () => {
                         firstName: "",
                         lastName: "",
                         email: "",
+                        address: "",
                     });
-                };
+                }
             }, 3000);
         });
     };
@@ -70,7 +73,7 @@ const SignUpFormHook = () => {
         setValue("firstName", "Ngoc");
         setValue("lastName", "Duc");
         setValue("email", "ngocduc@gmail.com");
-    }
+    };
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
@@ -110,7 +113,13 @@ const SignUpFormHook = () => {
             </div>
             <div className="flex flex-col gap-2 mb-4">
                 <label htmlFor="email">Email address</label>
-                <input
+                <MyInput
+                    name="email"
+                    placeholder="Enter your email address"
+                    id="email"
+                    control={control}
+                />
+                {/* <input
                     {...register("email", {
                         required: "Email Address is required",
                     })}
@@ -119,6 +128,18 @@ const SignUpFormHook = () => {
                     id="email"
                     placeholder="Enter your email address"
                     className="p-4 rounded-md outline-none border border-gray-200"
+                /> */}
+                {errors.email && (
+                    <p className="text-red-500">{errors.email?.message}</p>
+                )}
+            </div>
+            <div className="flex flex-col gap-2 mb-4">
+                <label htmlFor="email">Address</label>
+                <MyInput2
+                    name="address"
+                    placeholder="Enter your address"
+                    id="address"
+                    control={control}
                 />
                 {errors.email && (
                     <p className="text-red-500">{errors.email?.message}</p>
@@ -143,9 +164,42 @@ const SignUpFormHook = () => {
                 </button>
             </div>
             <div>
-                <button className="px-2 py-1 bg-green-400 text-white rounded-md mt-2" onClick={handleSetDemoData}>Demo data</button>
+                <button
+                    className="px-2 py-1 bg-green-400 text-white rounded-md mt-2"
+                    onClick={handleSetDemoData}
+                >
+                    Demo data
+                </button>
             </div>
         </form>
+    );
+};
+
+const MyInput = ({ control, ...props }) => {
+    return (
+        <Controller
+            name={props.name}
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+                <input
+                    className="p-4 rounded-md outline-none border border-gray-200"
+                    {...field}
+                    {...props}
+                />
+            )}
+        />
+    );
+};
+
+const MyInput2 = ({ control, ...props }) => {
+    const { field } = useController({ control, name: props.name, defaultValue: "" });
+    return (
+        <input
+            className="p-4 rounded-md outline-none border border-gray-200"
+            {...field}
+            {...props}
+        />
     );
 };
 
