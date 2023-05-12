@@ -20,4 +20,4 @@ const Dropdown = () => {
     )
 }
 
-export default Dropdown
+export default Dropdown;
