@@ -41,7 +41,9 @@ const GameWithReducer = () => {
     // const action = {type: 'CLICK', payload: {}}
     // dispacth({type: 'CLICK'})
 
-    const winner = calculateWinner(state.board);
+    // const winner = calculateWinner(state.board);
+    const winner = calculateWinner(state.board2);
+    // Test lỗi với ErrorBoundary
     const handleClick = (index) => {
         dispatch({
             type: 'CLICK',
