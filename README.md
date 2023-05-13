@@ -9,6 +9,7 @@ Course [HTML CSS Master Evondev](https://ktclick.com/invite/391900256373).
 - Prop
 - Fragment
 - Portal
+- ErrorBoundary
 
 ## ReactHook
 ### [useState](https://react.dev/reference/react/useEffect)
