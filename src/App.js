@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.scss";
-import TaskApp from "./components/taskapp/TaskApp";
+import PhotoContext from "./components/contexts/PhotoContext";
+// import IntroContext from "./components/context/IntroContext";
 
-function App() {
+const App = () => {
     return (
-        <div>  
-            <TaskApp />
-        </div>
+        <>
+            {/* <IntroContext /> */}
+            <PhotoContext />
+        </>
     );
 }
 
