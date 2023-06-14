@@ -4,6 +4,7 @@ import "./App.scss";
 // import Title from "./components/advanced-react/render-props/Title";
 // import HandleValue from "./components/advanced-react/render-props/HandleValue";
 import ListAccordion from "./components/advanced-react/composition/ListAccordion";
+import SwitchProps from "./components/advanced-react/props-collections-getters/SwitchProps";
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
                 return <h1>Hello Fucking World</h1>
             }}></Title>
             <HandleValue></HandleValue> */}
+            <SwitchProps></SwitchProps>
             <ListAccordion></ListAccordion>
         </div>
     );
