@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.scss";
-import Modal from "./components/modals/Modal";
-import DropdownPortal from "./components/hookExample/DropdownPortal";
-import Tooltip from "./components/modals/Tooltip";
-import GameWithReducer from "./components/tictactoe/GameWithReducer";
-import ModalBase from "./components/modals/ModalBase";
-import ModalAdvanced from "./components/modals/ModalAdvanced";
-import TooltipAdvanced from "./components/modals/TooltipAdvanced";
+import Modal from "../components/modals/Modal";
+import DropdownPortal from "../components/hookExample/DropdownPortal";
+import Tooltip from "../components/modals/Tooltip";
+import GameWithReducer from "../components/tictactoe/GameWithReducer";
+import ModalBase from "../components/modals/ModalBase";
+import ModalAdvanced from "../components/modals/ModalAdvanced";
+import TooltipAdvanced from "../components/modals/TooltipAdvanced";
 // import MovieSearch from "./components/movieSearch/MovieSearch";
 // import MainSideBar from "./components/hookExample/MainSideBar";
 
