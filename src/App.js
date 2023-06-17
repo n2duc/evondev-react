@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.scss";
-import MemoHook from "./components/hookExample/MemoHook";
+import FirebaseApp from "./firebase/FirebaseApp";
+import FirebaseAuth from "./firebase/FirebaseAuth";
 
 const App = () => {
-    
     return (
         <div>
-            <MemoHook></MemoHook>
+            <FirebaseApp></FirebaseApp>
+            <FirebaseAuth></FirebaseAuth>
         </div>
     );
 };
